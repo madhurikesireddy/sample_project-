@@ -1,0 +1,60 @@
+<html>
+
+<title>HTML5 Bouncing Ball</title>
+
+<style type="text/css">
+#CS557Canvas { 
+     background: #FFF; 
+    border:1px solid #000; }
+h2{
+color: orange;
+}
+</style>
+<!--CSS Style End-->
+<body>
+<h2 align="center">Bouncing Ball</h2>
+<div align="center" id="center">
+<canvas id="CS557Canvas" width="400" height="300"></canvas>
+<center><input type="button"  value=" Start" onclick="myFunction();"/>
+<input type="button" value=" Stop " onclick="clearInterval(interval);"/></center>
+</div>
+</body>
+<script type="text/javascript">
+function myFunction () {
+
+        var context;
+        var dx= -2;  
+        var dy=-2;
+        var y=150;
+        var x=10;
+        
+      
+        function draw(){
+            context= CS557Canvas.getContext('2d');
+            context.clearRect(0,0,400,400);
+            context.beginPath();
+
+            context.arc(x,y,20,0,Math.PI*2,true);
+           
+            context.closePath();
+            
+            context.fill();
+            if( x<0 || x>400){
+            dx=-dx;
+	
+            context.fillStyle = "#0000FF";
+	}
+            if( y<0 || y>300){
+            dy=-dy;
+           context.fillStyle = "#FF0000";
+	
+             } 
+            x+=dx;
+            y+=dy;
+          
+        }
+      return interval = setInterval(draw,10); 
+}
+
+</script>
+</html> 

@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+<title>tictactoe</title>
+<h1>CS557D_kesireddy madhuri_17581_HW#3</h1>
+
+
+<style>
+
+body{
+	background-image: url("background.png");
+}
+
+h1 {
+    text-align:center;
+    color: orange;
+}
+
+th{
+background-color: yellow;
+
+width:100px;
+
+height:100px;
+
+padding:10px
+
+}
+
+th img{
+
+width:40px;
+
+height:40px;
+
+}
+
+img{
+
+width:40px;
+
+height:40px;
+
+}
+
+table{
+border-collapse: collapse;
+
+}
+
+div {height:50px;padding:10px;}
+
+</style>
+
+<script>
+
+function drag(ev)
+
+{
+
+ev.dataTransfer.setData("smile", ev.target.id);
+
+}
+
+function allowDrop(ev) {
+
+ev.preventDefault();
+
+}
+
+function drop(ev) {
+ev.preventDefault();
+var data = ev.dataTransfer.getData("smile");
+ev.target.appendChild(document.getElementById(data));
+}
+     
+</script>
+
+</head>
+
+<body>
+
+<h1> Tic-Tac-Toe</h1>
+
+<table border="1">
+
+<tr>
+
+<th><div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+
+<th><div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+
+<th><div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+
+</tr><tr>
+
+<th><div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+
+<th><div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+
+
+<th><div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+
+</tr><th><div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+
+<th><div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+
+<th><div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+
+</tr>
+</table>
+<br>
+
+<img id="drag0" src="o.png" draggable="true"
+
+ondragstart="drag(event)" width="100" height="100">
+
+<img id="drag1" src="o.png" draggable="true"
+
+ondragstart="drag(event)" width="100" height="100">
+
+<img id="drag2" src="o.png" draggable="true"
+
+ondragstart="drag(event)" width="100" height="100">
+
+<img id="drag3" src="o.png" draggable="true"
+
+ondragstart="drag(event)" width="100" height="100">
+
+<img id="drag4" src="o.png" draggable="true"
+
+ondragstart="drag(event)" width="100" height="100">
+
+<br>
+
+<img id="drag5" src="x.png" draggable="true"
+
+ondragstart="drag(event)" width="100" height="100">
+
+<img id="drag6" src="x.png" draggable="true"
+
+ondragstart="drag(event)" width="100" height="100">
+
+<img id="drag7" src="x.png" draggable="true"
+
+ondragstart="drag(event)" width="100" height="100">
+
+<img id="drag8" src="x.png" draggable="true"
+
+ondragstart="drag(event)" width="100" height="100">
+
+<img id="drag9" src="x.png" draggable="true"
+
+ondragstart="drag(event)" width="100" height="100">
+
+
+</body>
+
+</html>
